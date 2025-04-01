@@ -35,7 +35,7 @@ describe( 'Funcionalidade : Login' ,   () => {
 
     });
 
-    it('Deve exibir uma mensagem de erro ao inserir usuário  inválido', () => { 
+    it('Deve exibir uma mensagem de erro ao inserir senha inválido', () => { 
                        
         cy.get('#username').type("levi.barros@teste.com")
         cy.get('#password').type('teste')
@@ -67,14 +67,9 @@ describe( 'Funcionalidade : Login' ,   () => {
 
     });
 
-
-    it.only('Deve fazer login com sucesso - Usando comandos customizados' , ()  =>  {
-            cy.login('levi.barros@teste.com', 'teste123')
-            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, levi.barros (não é levi.barros? Sair)')
-
+    it.only('Deve fazer login usando comandos customizados', () => {
+        cy.login('levi.barros@teste.com', 'teste123')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, levi.barros (não é levi.barros? Sair)')
 
     });
-
-
-
 })

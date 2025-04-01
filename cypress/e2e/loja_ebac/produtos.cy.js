@@ -1,14 +1,17 @@
 ///<reference types="cypress"/>
 
-describe('Funcionalidade: Produtos' , () => {
+import produtosPage from "../../support/page-objects/produtos.page";
 
-    beforeEach (()=> {
+
+describe('Funcionalidade: Produtos', () => {
+
+    beforeEach (() => {
        cy.visit('produtos')
 
     });
 
 
-       it('Deve selecionar um produto da lista' , () => {
+       it('Deve selecionar um produto da lista', () => {
             cy.get('.products > .row')
                 //.first()
                 //.last()
@@ -16,11 +19,11 @@ describe('Funcionalidade: Produtos' , () => {
                 .contains('Apollo Running Short')
                 .click()
 
-                cy.get('#tab-title-description > a').should('contain' , 'Descrição')
-                   
-
-       });
+                cy.get('#tab-title-description > a').should('contain' , 'Descrição')                        
 
 
+ 
+   });
 
-})
+
+});   
